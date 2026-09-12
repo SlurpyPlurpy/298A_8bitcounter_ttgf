@@ -33,7 +33,7 @@ async def test_project(dut):
     # 3. Test synchronous load
     dut.ui_in.value = 0b01010101 # Value to load
     dut.uio_in.value = 0b00000011 # Bit 0 = load, Bit 1 = oe
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 5)
     assert dut.uo_out.value == 0b01010101, f"Increment failed; Expected 0b01010101, got {dut.uo_out.value}" # Check output
 
     # Set the input values you want to test
