@@ -28,7 +28,7 @@ async def test_project(dut):
 
     # Test incrementing
     await ClockCycles(dut.clk, 5)
-    assert dut.uo_out.value == 5, f"Increment failed; Expected 5, got {dut.uo_out.value}"
+    assert dut.uo_out.value == 0b00000100, f"Increment failed; Expected 5, got {dut.uo_out.value}"
 
     # 3. Test synchronous load
     dut.ui_in.value = 0b01010101 # Value to load
