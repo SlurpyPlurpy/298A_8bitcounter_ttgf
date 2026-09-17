@@ -9,11 +9,14 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+**8-bit binary counter**
+1. Asynchronous reset: when `rst_n` is LOW, the counter resets to 0. Reset is asynchronous because of the `negedge rst_n` condition in the main loop. 
+2. Synchronous load: when `uio_in[0]` is HIGH, the counter is set to the value from `ui_in`
+3. Tri-state outputs: the output `uo_out` is in a high-impedance state if `oe_signal` is LOW. Otherwise, it outputs the value of the counter.
 
 ## How to test
 
-Explain how to use your project
+Verify that the features work and that the counter counts! 
 
 ## External hardware
 
